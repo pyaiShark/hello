@@ -18,7 +18,7 @@ class Flights(models.Model):
         return f"{self.pk}: {self.origin} to {self.destination}" # pk is also called id hear bu best to use pk(Primary Key)
     
     def is_valid_flights(self):
-        return self.origin != self.destination or self.duration > 0
+        return self.origin != self.destination and self.duration > 0
 
 class Passengers(models.Model):
     first = models.CharField(max_length=64)
